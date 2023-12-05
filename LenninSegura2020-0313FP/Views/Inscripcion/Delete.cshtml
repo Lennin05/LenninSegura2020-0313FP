@@ -1,0 +1,31 @@
+﻿@model Inscripcion
+<br>
+<br>
+<br>
+
+<h1 class="display-2">Eliminar una inscripcion</h1>
+
+<br>
+<form asp-controller="Inscripcion" asp-action="Delete" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"> </div>
+
+
+    <input type="hidden" asp-for="IdInscripcion" />
+
+
+    <div class="form-group">
+        <label asp-for="Fecha_Inscripcion">Fecha de inscripcion</label>
+        <input asp-for="Fecha_Inscripcion" class="form-control">
+        <span asp-validation-for="Fecha_Inscripcion" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Fecha_Limite">Fecha de inscripcion</label>
+        <input asp-for="Fecha_Limite" class="form-control">
+        <span asp-validation-for="Fecha_Limite" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Eliminar</button>
+
+
+</form>

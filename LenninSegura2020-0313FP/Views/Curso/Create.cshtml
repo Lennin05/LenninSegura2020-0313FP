@@ -1,0 +1,22 @@
+﻿@model Curso
+<br>
+<br>
+<br>
+
+<h1 class="display-2">Agregar Nuevo Curso</h1>
+
+<br>
+<form asp-controller="Curso" asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"> </div>
+
+    <input type="hidden" asp-for="ID" />
+
+    <div class="form-group">
+        <label asp-for="Cursos">Tecnico</label>
+        <input asp-for="Cursos" class="form-control">
+        <span asp-validation-for="Cursos" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Agregar</button>
+
+</form>

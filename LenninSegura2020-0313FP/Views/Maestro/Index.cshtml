@@ -1,0 +1,48 @@
+﻿@model List<Maestro>
+
+<h1 class="display-3">Maestros</h1>
+
+
+<br />
+<br />
+
+<div class="btn btn-success"> <a asp-action="Create"><i class="fa-solid fa-floppy-disk"></i>Agregar</a></div>
+<br />
+<br />
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Documento</th>
+            <th>Telefono</th>
+            <th>Direccion</th>
+            <th>Area</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var maestro in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => maestro.ID)</td>
+                <td>@Html.DisplayFor(m => maestro.Nombre)</td>
+                <td>@Html.DisplayFor(m => maestro.Apellido)</td>
+                <td>@Html.DisplayFor(m => maestro.Documento)</td>
+                <td>@Html.DisplayFor(m => maestro.Telefono)</td>
+                <td>@Html.DisplayFor(m => maestro.Direccion)</td>
+                <td>@Html.DisplayFor(m => maestro.Area)</td>
+                <td>@Html.DisplayFor(m => maestro.Email)</td>
+                <td><a class="btn btn-primary" asp-action="Edit" asp-route-id="@maestro.ID"><i class="fa-solid fa-pen-to-square"></i>Editar</a></td>
+                <td><a class="btn btn-danger" asp-action="Delete" asp-route-id="@maestro.ID"><i class="fa-solid fa-trash-can"></i>Eliminar</a></td>
+
+            </tr>
+
+        }
+
+    </tbody>
+</table>

@@ -1,0 +1,42 @@
+﻿@model List<CentroEducativo>
+
+<h1 class="display-3">Centros Educativos</h1>
+
+
+<br />
+<br />
+
+<div class="btn btn-success"> <a asp-action="Create" asp-controller="CentroEducativo"><i class="fa-solid fa-floppy-disk"></i>Agregar</a></div>
+<br />
+<br />
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Telefono</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var CentroEducativo in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor( m => CentroEducativo.IdCentro)</td>
+                <td>@Html.DisplayFor( m => CentroEducativo.Nombre)</td>
+                <td>@Html.DisplayFor( m => CentroEducativo.direccion)</td>
+                <td>@Html.DisplayFor( m => CentroEducativo.director)</td>
+                <td>@Html.DisplayFor(m => CentroEducativo.telefono)</td>
+                <td>@Html.DisplayFor(m => CentroEducativo.correo)</td>
+                <td><a class="btn btn-primary" asp-action="Edit" asp-route-id="@CentroEducativo.IdCentro"><i class="fa-solid fa-pen-to-square"></i>Editar</a></td>
+                <td><a class="btn btn-danger" asp-action="Delete" asp-route-id="@CentroEducativo.IdCentro"><i class="fa-solid fa-trash-can"></i>Eliminar</a></td>
+
+            </tr>
+
+        }
+
+    </tbody>
+</table>

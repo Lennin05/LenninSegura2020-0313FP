@@ -1,0 +1,37 @@
+﻿@model List<AnoEscolar>
+
+<h1 class="display-3">Año Escolar</h1>
+
+<br />
+<br />
+
+<div class="btn btn-success"> <a asp-action="Create" asp-controller="AnoEscolar"><i class="fa-solid fa-floppy-disk"></i>Agregar</a></div>
+<br />
+<br />
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>AñoEscolar</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var AnoEscolar in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => AnoEscolar.ID)</td>
+                <td>@Html.DisplayFor(m => AnoEscolar.anoEscolar)</td>
+
+                <td><a class="btn btn-primary" asp-action="Edit" asp-route-id="@AnoEscolar.ID"><i class="fa-solid fa-pen-to-square"></i>Editar</a></td>
+                <td><a class="btn btn-danger" asp-action="Delete" asp-route-id="@AnoEscolar.ID"><i class="fa-solid fa-trash-can"></i>Eliminar</a></td>
+
+            </tr>
+
+        }
+
+    </tbody>
+</table>
