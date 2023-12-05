@@ -18,4 +18,10 @@ public partial class Asignatura
     [StringLength(50)]
     [Unicode(false)]
     public string? CargaHoraria { get; set; }
+
+    //maestro
+    [ForeignKey("Maestro")]
+    public int? maestroID { get; set; }
+    public Maestro? maestro { get; set; }
+
 }

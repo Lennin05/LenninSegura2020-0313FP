@@ -19,14 +19,19 @@ public partial class Estudiante
     [Unicode(false)]
     public string Apellido { get; set; } = null!;
 
-    public DateOnly FechaNacimiento { get; set; }
+    [Column(TypeName = "date")]
+    public DateTime FechaNacimiento { get; set; }
 
     [Unicode(false)]
     public string? Direcion { get; set; }
 
     [StringLength(50)]
+    [Unicode(false)]
     public string? Email { get; set; }
 
     [StringLength(50)]
+    [Unicode(false)]
     public string NIE { get; set; } = null!;
+
+    public List<Inscripcion> inscripciones { get; set; }
 }

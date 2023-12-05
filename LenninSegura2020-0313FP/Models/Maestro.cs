@@ -31,4 +31,6 @@ public partial class Maestro
 
     [StringLength(50)]
     public string? Email { get; set; }
+
+    public required List<Asignatura> AsignaturaList { get; set; }
 }

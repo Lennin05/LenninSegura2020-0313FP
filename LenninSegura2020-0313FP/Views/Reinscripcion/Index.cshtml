@@ -1,0 +1,37 @@
+﻿@model List<Reinscripcion>
+
+<h1 class="display-3">Reinscripciones</h1>
+
+
+<br />
+<br />
+
+<div class="btn btn-success"> <a asp-action="Create" asp-controller="Reinscripcion"><i class="fa-solid fa-floppy-disk"></i>Agregar</a></div>
+<br />
+<br />
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Fecha de Nacimiento</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var Reinscripcion in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => Reinscripcion.IdReinscripcion)</td>
+                <td>@Html.DisplayFor(m => Reinscripcion.Fecha_Inscripcion)</td>
+                <td>@Html.DisplayFor(m => Reinscripcion.Fecha_Limite)</td>
+                <td><a class="btn btn-primary" asp-action="Edit" asp-route-id="@Reinscripcion.IdReinscripcion"><i class="fa-solid fa-pen-to-square"></i>Editar</a></td>
+                <td><a class="btn btn-danger" asp-action="Delete" asp-route-id="@Reinscripcion.IdReinscripcion"><i class="fa-solid fa-trash-can"></i>Eliminar</a></td>
+
+            </tr>
+
+        }
+
+    </tbody>
+</table>

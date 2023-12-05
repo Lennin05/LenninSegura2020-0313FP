@@ -1,0 +1,46 @@
+﻿@model List<Estudiante>
+
+<h1 class="display-3">Alumnos</h1>
+
+
+<br />
+<br />
+
+<div class="btn btn-success"> <a asp-action="Create" asp-controller="Estudiante"><i class="fa-solid fa-floppy-disk"></i>Agregar</a></div>
+<br />
+<br />
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Direccion</th>
+            <th>Correo Electronico</th>
+            <th>NIE</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var Estudiante in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => Estudiante.ID)</td>
+                <td>@Html.DisplayFor(m => Estudiante.Nombre)</td>
+                <td>@Html.DisplayFor(m => Estudiante.Apellido)</td>
+                <td>@Html.DisplayFor(m => Estudiante.FechaNacimiento)</td>
+                <td>@Html.DisplayFor(m => Estudiante.Direcion)</td>
+                <td>@Html.DisplayFor(m => Estudiante.Email)</td>
+                <td>@Html.DisplayFor(m => Estudiante.NIE)</td>
+                <td><a class="btn btn-primary" asp-action="Edit" asp-route-id="@Estudiante.ID"><i class="fa-solid fa-pen-to-square"></i>Editar</a></td>
+                <td><a class="btn btn-danger" asp-action="Delete" asp-route-id="@Estudiante.ID"><i class="fa-solid fa-trash-can"></i>Eliminar</a></td>
+
+            </tr>
+
+        }
+
+    </tbody>
+</table>

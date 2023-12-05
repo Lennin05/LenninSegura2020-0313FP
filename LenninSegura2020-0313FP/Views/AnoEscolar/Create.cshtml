@@ -1,0 +1,24 @@
+﻿@model AnoEscolar
+<br>
+<br>
+<br>
+
+<h1 class="display-2">Agregar nuevo ano Escolar</h1>
+
+<br>
+<form asp-controller="AnoEscolar" asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"> </div>
+
+    <input type="hidden" asp-for="ID" />
+
+    <div class="form-group">
+        <label asp-for="anoEscolar">Asignatura</label>
+        <input asp-for="anoEscolar" class="form-control">
+        <span asp-validation-for="anoEscolar" class="text-danger"></span>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Agregar</button>
+
+
+</form>

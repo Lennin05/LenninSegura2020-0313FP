@@ -1,0 +1,25 @@
+﻿@model AnoEscolar
+<br>
+<br>
+<br>
+
+<h1 class="display-2">Eliminar un ano escolar</h1>
+
+<br>
+<form asp-controller="AnoEscolar" asp-action="Delete" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"> </div>
+
+    <input type="hidden" asp-for="ID" />
+
+
+    <div class="form-group">
+        <label asp-for="anoEscolar">Nombre</label>
+        <input asp-for="anoEscolar" class="form-control">
+        <span asp-validation-for="anoEscolar" class="text-danger"></span>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Eliminar</button>
+
+
+</form>

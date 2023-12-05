@@ -13,4 +13,12 @@ public partial class Curso
 
     [StringLength(100)]
     public string Cursos { get; set; } = null!;
+
+    //relaciones
+
+    [ForeignKey("AnoEscolar")]
+    public int? anoescolarID { get; set; }
+    public AnoEscolar? anoEscolar { get; set; }
+    public List<Maestro> maestros { get; set; }
+    public List<Inscripcion> inscripciones { get; set; }
 }
